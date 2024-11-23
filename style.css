@@ -1,0 +1,63 @@
+/* Global Styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+    font-family: 'Roboto Mono', monospace; /* Monospace font */
+    margin: 0;
+    margin-top: 2vh;
+}
+/* Limit the width of text and ensure proper wrapping */
+section p, header p, section h2, footer p {
+    max-width: 80vw; /* Text will not exceed 80% of the screen width */
+    word-wrap: break-word; /* Break long words if necessary */
+    margin: 0 auto; /* Center the text within the section */
+    flex-wrap: wrap;
+}
+
+img{
+    max-width: 4vw;
+    max-height: 4vh;
+}
+/* Cursor */
+.cursor {
+    position: relative;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Animation */
+.typewriter-animation {
+    width: 0;
+    animation:
+        typewriter 4s steps(50) var(--animation-delay) 1 normal both,
+        blinkingCursor 500ms steps(50) infinite normal;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkingCursor {
+    from { border-right-color: rgba(255, 255, 255, 0.75); }
+    to { border-right-color: transparent; }
+}
+
+/* Links */
+a {
+    color: #00d1b2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: #000000; /* Footer darker than the background */
+    color: #ffffff;
+    font-size: 14px;
+}
