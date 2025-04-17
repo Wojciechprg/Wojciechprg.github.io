@@ -5,19 +5,22 @@ body {
     font-family: 'Roboto Mono', monospace; /* Monospace font */
     margin: 0;
     margin-top: 2vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+
 /* Limit the width of text and ensure proper wrapping */
 section p, header p, section h2, footer p {
     max-width: 80vw; /* Text will not exceed 80% of the screen width */
     word-wrap: break-word; /* Break long words if necessary */
     margin: 0 auto; /* Center the text within the section */
-    flex-wrap: wrap;
 }
 
-img{
-    max-width: 4vw;
-    max-height: 4vh;
+/* Images */
+img {
+    max-width: 150px;
+    height: auto;
 }
+
 /* Cursor */
 .cursor {
     position: relative;
@@ -60,4 +63,29 @@ a:hover {
     background-color: #000000; /* Footer darker than the background */
     color: #ffffff;
     font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section p, header p, section h2, footer p {
+        max-width: 90vw; /* Increase max-width for smaller screens */
+    }
+
+    .typewriter-animation {
+        font-size: 1.2em; /* Adjust font size for better readability */
+    }
+    img {
+        max-width: 100px; /* Adjust image size for smaller screens */
+    }
+    #certificates div {
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center; /* Center the items */
+    }
+
+    #certificates div[data-iframe-width] {
+        margin: 10px; /* Add spacing between certificates */
+        width: 100%; /* Make certificates take full width */
+        max-width: 300px; /* Limit the maximum width */
+    }
 }
